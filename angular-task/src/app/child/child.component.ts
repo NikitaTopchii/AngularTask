@@ -6,6 +6,7 @@ import {RandomDataService} from "../core/random-data.service";
   selector: 'app-child',
   templateUrl: './child.component.html',
   styleUrl: './child.component.scss',
+  providers: [RandomDataService],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ChildComponent{
@@ -19,6 +20,9 @@ export class ChildComponent{
   private childSecondNumber: number = 0;
 
   private childPersonData: Person = { name: '', age: 0 };
+
+  nameHistory: string[] = [];
+  numberHistory: number[] = [];
 
   getChildFirstNumber(){
     return this.childFirstNumber;
@@ -41,5 +45,11 @@ export class ChildComponent{
     this.childPersonData.age = this.randomDataService.generateRandomNumber();
     this.childFirstNumber = this.randomDataService.generateRandomNumber();
     this.childSecondNumber = this.randomDataService.generateRandomNumber();
+    this.updateHistories();
+  }
+
+  updateHistories() {
+    this.nameHistory = this.randomDataService.getNameHistory();
+    this.numberHistory = this.randomDataService.getNumberHistory();
   }
 }

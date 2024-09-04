@@ -3,6 +3,14 @@
   <span>Parent second number: {{ getParentSecondNumber() }}</span>
   <span>Parent person data (name): {{ getParentPersonData().name }}</span>
   <span>Parent person data (age): {{ getParentPersonData().age }}</span>
+  <span>Name history:</span>
+  @for (name of nameHistory; track name){
+    <span>{{ name }}</span>
+  }
+  <span>Number history:</span>
+  @for (number of numberHistory; track number){
+    <span>{{ number }}</span>
+  }
   <button (click)="updateParentData()">update parent data</button>
   <button (click)="updateParentPersonDataReference()">update parent person data reference</button>
   <button (click)="updateParentPersonDataProperty()">update parent person data property</button>

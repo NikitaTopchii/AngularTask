@@ -3,6 +3,14 @@
   <span>Child second number: {{ getChildSecondNumber() }}</span>
   <span>Child person data (name): {{ getChildPersonData().name }}</span>
   <span>Child person data (age): {{ getChildPersonData().age }}</span>
+  <span>Name history:</span>
+  @for (name of nameHistory; track name){
+    <span>{{ name }}</span>
+  }
+  <span>Number history:</span>
+  @for (number of numberHistory; track number){
+    <span>{{ number }}</span>
+  }
   <div style="background: aqua; display: flex; flex-direction: column">
     <span>Parent person data (name): {{ getParentPersonData().name }}</span>
     <span>Parent person data (age): {{ getParentPersonData().age }}</span>

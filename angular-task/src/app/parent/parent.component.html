@@ -1,1 +1,13 @@
-<p>parent works!</p>
+<div style="display: flex; flex-direction: column">
+  <span>Parent first number: {{ getParentFirstNumber() }}</span>
+  <span>Parent second number: {{ getParentSecondNumber() }}</span>
+  <span>Parent person data (name): {{ getParentPersonData().name }}</span>
+  <span>Parent person data (age): {{ getParentPersonData().age }}</span>
+  <button (click)="updateParentData()">update parent data</button>
+  <button (click)="updateParentPersonDataReference()">update parent person data reference</button>
+  <button (click)="updateParentPersonDataProperty()">update parent person data property</button>
+
+  <div style="margin: 10px; background: antiquewhite">
+    <app-child [parentPersonData]="getParentPersonData()" [numberForChangeDetection]="getNumberForChangeDetection()"></app-child>
+  </div>
+</div>

@@ -1,1 +1,11 @@
-<p>child works!</p>
+<div style="display: flex; flex-direction: column">
+  <span>Child first number: {{ getChildFirstNumber() }}</span>
+  <span>Child second number: {{ getChildSecondNumber() }}</span>
+  <span>Child person data (name): {{ getChildPersonData().name }}</span>
+  <span>Child person data (age): {{ getChildPersonData().age }}</span>
+  <div style="background: aqua; display: flex; flex-direction: column">
+    <span>Parent person data (name): {{ getParentPersonData().name }}</span>
+    <span>Parent person data (age): {{ getParentPersonData().age }}</span>
+  </div>
+  <button (click)="updateChildData()">update child data</button>
+</div>

@@ -31,9 +31,4 @@ export class RandomDataService {
   getNumberHistory(): number[] {
     return this.numberHistory;
   }
-
-  clearHistory() {
-    this.nameHistory = [];
-    this.numberHistory = [];
-  }
 }
